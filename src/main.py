@@ -93,7 +93,7 @@ async def chat_command(int: discord.Interaction, message: str):
                 return
 
             embed = discord.Embed(
-                description=f"<@{user.id}> wants to chat! 🤖💬",
+                description=f"<@{user.id}> wants to chat! 💬",
                 color=discord.Color.green(),
             )
             embed.add_field(name=user.name, value=message)
@@ -195,7 +195,7 @@ async def on_message(message: DiscordMessage):
                 await message.delete()
                 await thread.send(
                     embed=discord.Embed(
-                        description=f"❌ **{message.author}'s message has been deleted by moderation.**",
+                        description=f"❌ **{message.author}'s message has been deleted by Galadriel.**",
                         color=discord.Color.red(),
                     )
                 )
@@ -203,7 +203,7 @@ async def on_message(message: DiscordMessage):
             except Exception as e:
                 await thread.send(
                     embed=discord.Embed(
-                        description=f"❌ **{message.author}'s message has been blocked by moderation but could not be deleted. Missing Manage Messages permission in this Channel.**",
+                        description=f"❌ **{message.author}'s message has been blocked by Galadriel but could not be deleted. Missing Manage Messages permission in this Channel.**",
                         color=discord.Color.red(),
                     )
                 )
@@ -218,7 +218,7 @@ async def on_message(message: DiscordMessage):
         if len(flagged_str) > 0:
             await thread.send(
                 embed=discord.Embed(
-                    description=f"⚠️ **{message.author}'s message has been flagged by moderation.**",
+                    description=f"⚠️ **{message.author}'s message has been flagged by Galadriel.**",
                     color=discord.Color.yellow(),
                 )
             )
