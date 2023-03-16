@@ -49,10 +49,11 @@ async def generate_completion_response(
         )
         rendered = prompt.render()
         response = openai.Completion.create(
-            engine="text-davinci-003",
-            # engine="text-babbage-001",
+            # engine="text-davinci-003",
+            engine="text-babbage-001",
+            # engine="gpt-3.5-turbo",
             prompt=rendered,
-            temperature=1.0,
+            temperature=0.8,
             top_p=0.9,
             max_tokens=512,
             stop=["<|endoftext|>"],
